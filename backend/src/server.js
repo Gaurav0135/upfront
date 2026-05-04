@@ -18,12 +18,17 @@ const PORT = process.env.PORT || 5000;
 
 const startServer = async () => {
   try {
-    await connectDB();
-    await seedPortfolioIfEmpty();
-
     const server = app.listen(PORT, () => {
       console.log(`Backend server running on http://localhost:${PORT}`);
     });
+
+    try {
+      await connectDB();
+      await seedPortfolioIfEmpty();
+    } catch (dbError) {
+      console.error("Database initialization failed:", dbError.message);
+      console.error("Server will stay up, but database-backed routes may fail until MongoDB is fixed.");
+    }
 
     server.on("error", (error) => {
       if (error?.code === "EADDRINUSE") {
