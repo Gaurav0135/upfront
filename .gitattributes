@@ -1,0 +1,35 @@
+# Auto detect text files and normalize line endings to LF
+* text=auto
+
+# JavaScript files
+*.js eol=lf
+*.jsx eol=lf
+*.mjs eol=lf
+
+# JSON files
+*.json eol=lf
+
+# YAML files
+*.yml eol=lf
+*.yaml eol=lf
+
+# Shell scripts
+*.sh eol=lf
+*.bash eol=lf
+
+# Windows-specific
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.mov binary
+*.mp4 binary
+*.mp3 binary
+*.gz binary
+*.zip binary

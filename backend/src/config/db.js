@@ -2,16 +2,20 @@ import mongoose from "mongoose";
 
 const connectDB = async () => {
   const mongoUri = process.env.MONGO_URI;
+  const fallbackUri = process.env.MONGO_FALLBACK_URI || "mongodb://127.0.0.1:27017/upfront_local";
 
   if (!mongoUri) {
     throw new Error("MONGO_URI is missing in environment variables");
   }
 
-  await mongoose.connect(mongoUri, {
-    dbName: "upfront_local"
-  });
-
-  console.log("MongoDB connected successfully");
+  try {
+    await mongoose.connect(mongoUri);
+    console.log("MongoDB connected successfully (Atlas)");
+  } catch (error) {
+    console.warn("Atlas connection failed, falling back to local MongoDB:", error.message);
+    await mongoose.connect(fallbackUri);
+    console.log("MongoDB connected successfully (local fallback)");
+  }
 };
 
 export default connectDB;

@@ -1,9 +1,54 @@
-node_modules
-dist
-build
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment Variables
 .env
-.env.*
+.env.local
+.env.*.local
+.env.production.local
 !.env.example
-coverage
+
+# Build Output
+dist/
+build/
+.next/
+out/
+
+# IDE and Editor
+.vscode/
+.idea/
 .DS_Store
-.vscode
+*.swp
+*.swo
+*.swn
+*~
+.env.*.swp
+
+# Testing
+coverage/
+.nyc_output/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+test-image.png
+*.pem
+*.key
+.env.backup
+
+# Node
+.npm/
+.eslintcache

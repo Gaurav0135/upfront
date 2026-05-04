@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { Mail, PlusCircle, Upload, X, Trash2, Edit } from "lucide-react";
 
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5001/api";
 
 const initialPortfolio = {
   title: "",

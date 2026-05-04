@@ -6,8 +6,8 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
   "Hi Gaurav, I came from your website and would like to discuss a project."
 )}`;
 const emailAddress = "support.upfront@gmail.com";
-const linkedinUrl = "https://linkedin.com/in/gauravpatel";
-const githubUrl = "https://github.com/gauravpatel";
+const linkedinUrl = "https://www.linkedin.com/in/gaurav-patel-9a34212bb/";
+const githubUrl = "https://github.com/Gaurav0135";
 const instagramUrl = "https://www.instagram.com/gaurav_patel_72/";
 const phoneNumber = "+919691184503";
 
