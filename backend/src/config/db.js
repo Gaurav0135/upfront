@@ -13,8 +13,13 @@ const connectDB = async () => {
     console.log("MongoDB connected successfully (Atlas)");
   } catch (error) {
     console.warn("Atlas connection failed, falling back to local MongoDB:", error.message);
-    await mongoose.connect(fallbackUri);
-    console.log("MongoDB connected successfully (local fallback)");
+    try {
+      await mongoose.connect(fallbackUri);
+      console.log("MongoDB connected successfully (local fallback)");
+    } catch (fallbackError) {
+      console.error("Both Atlas and local MongoDB connections failed:", fallbackError.message);
+      throw new Error("Failed to connect to any MongoDB instance");
+    }
   }
 };
 
